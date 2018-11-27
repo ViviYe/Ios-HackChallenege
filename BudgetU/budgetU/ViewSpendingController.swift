@@ -133,12 +133,14 @@ class ViewSpendingController: UIViewController, UICollectionViewDataSource, UICo
     
     // MARK: - UICollectionViewDelegate (all of these methods are optional)
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Run some code upon tapping a cell
-        // For example, if we wanted to remove the cell upon tap:
-        if (collectionView == self.collectionView){
-            personsArray.remove(at: indexPath.item)
+         let navViewController = TableView()
+        
+        self.navigationController?.pushViewController(navViewController, animated: true)
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+            //personsArray.remove(at: indexPath.item)
             collectionView.reloadData()
-        }
+        
         
     }
     
