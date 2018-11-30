@@ -11,7 +11,6 @@ import UIKit
 class ViewSpendingController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var collectionView: UICollectionView!
-    var buttomview: UICollectionView!
     var refreshControl: UIRefreshControl!
     var personsArray: [Catagories]!
     var personsArraycopy: [Catagories]!
@@ -19,7 +18,7 @@ class ViewSpendingController: UIViewController, UICollectionViewDataSource, UICo
     
     
     let photoCellReuseIdentifier = "photoCellReuseIdentifier"
-    let buttomCellReuseIdentifier = "buttomCellReuseIdentifier"
+    
     let headerReuseIdentifier = "headerReuseIdentifier"
     let padding: CGFloat = 8
     let headerHeight: CGFloat = 30
@@ -60,11 +59,7 @@ class ViewSpendingController: UIViewController, UICollectionViewDataSource, UICo
         // Setup Collection View
         // UICollectionViewFlowLayout is used to help organize our cells/items into a grid-pattern
         
-        let layoutbutton = UICollectionViewFlowLayout()
-        layoutbutton.scrollDirection = .vertical
-        layoutbutton.minimumLineSpacing = 10
-        layoutbutton.minimumInteritemSpacing = 10
-        
+       
         
         
         
