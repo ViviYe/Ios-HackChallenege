@@ -46,7 +46,6 @@ class detailviewcell: UITableViewCell{
         
         
     }
-    
     override func updateConstraints() {
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
@@ -66,11 +65,9 @@ class detailviewcell: UITableViewCell{
         super.updateConstraints()
     }
     
-    func configure(for spendings: Spending) {
+    func configure(for spendings: Spending, cat :String) {
         nameLabel.text = spendings.name
         artLabel.text = spendings.amount.description
-        
-        
     }
     
     

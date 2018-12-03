@@ -27,15 +27,10 @@ class Spendingtableview: UITableViewCell{
         artLabel.textColor = .white
         artLabel.font = UIFont.systemFont(ofSize: 14)
         
-        albLabel = UILabel()
-        albLabel.translatesAutoresizingMaskIntoConstraints = false
-        albLabel.textColor = .white
-        albLabel.font = UIFont.systemFont(ofSize: 14)
-        
         
         contentView.addSubview(nameLabel)
         contentView.addSubview(artLabel)
-        contentView.addSubview(albLabel)
+      
         contentView.backgroundColor = .darkGray
         
         
@@ -54,18 +49,14 @@ class Spendingtableview: UITableViewCell{
             artLabel.heightAnchor.constraint(equalTo: nameLabel.heightAnchor)
             ])
         
-        NSLayoutConstraint.activate([
-            albLabel.leadingAnchor.constraint(equalTo: artLabel.leadingAnchor),
-            albLabel.topAnchor.constraint(equalTo: artLabel.bottomAnchor),
-            albLabel.heightAnchor.constraint(equalTo: artLabel.heightAnchor)
-            ])
-        
+      
         
         super.updateConstraints()
     }
     
     func configure(for spt: Spending) {
         nameLabel.text = spt.name
+        artLabel.text = String(spt.amount)
         
         
         

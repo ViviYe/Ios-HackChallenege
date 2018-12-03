@@ -33,7 +33,8 @@ class NetworkManager {
                 }
                 let jsonDecoder = JSONDecoder()
                 if let user = try? jsonDecoder.decode(UserDataResponse.self, from: data) {
-                  NetworkManager.userid = user.data.id
+                UserDefaults.standard.set(String(user.data.id), forKey: "user")
+                    NetworkManager.userid = user.data.id
                     completion(user.data)
                 } else {
                     print("Invalid Response Data")
@@ -55,7 +56,7 @@ class NetworkManager {
         ]
         
         var id: String
-        id = String (NetworkManager.userid)
+        id =  UserDefaults.standard.string(forKey: "user") ?? "1"
         
         Alamofire.request(endpoint+"budget/"+id+"/category/", method: .post, parameters: parameters1, encoding: JSONEncoding.default, headers: [:]).validate().responseData { (response) in
             switch response.result {
@@ -80,6 +81,40 @@ class NetworkManager {
             }
         }
     }
+    
+    
+    
+    
+    
+    static func category(catagory: String, amount: Int) {
+        
+        
+        let parameters1: [String:Any] = [
+            "name": catagory,
+            ]
+        
+        var id: String
+        id = String (NetworkManager.userid)
+        
+        Alamofire.request(endpoint+"budget/"+id+"/category/", method: .post, parameters: parameters1, encoding: JSONEncoding.default, headers: [:]).validate().responseData { (response) in
+            switch response.result {
+            case .success(let data):
+                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+                    print(json)
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+       
+        
+    }
+    
+    
+    
+    
     
     
     

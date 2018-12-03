@@ -52,7 +52,7 @@ class catagorydetail: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! Spendingtableview
         let spt = spending[indexPath.row]
-        cell.configure(for: spt)
+        cell.configure(for: spt )
         cell.setNeedsUpdateConstraints()
         cell.selectionStyle = .none
         
