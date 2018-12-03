@@ -27,6 +27,7 @@
 		3A54AC7F21B4B8E9005A04E1 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54AC7E21B4B8E9005A04E1 /* NetWorkManager.swift */; };
 		3A54AC8121B4D284005A04E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54AC8021B4D283005A04E1 /* User.swift */; };
 		3A54AC8321B4D512005A04E1 /* ThirdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54AC8221B4D512005A04E1 /* ThirdController.swift */; };
+		3A54AC8521B4FB43005A04E1 /* newpost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54AC8421B4FB43005A04E1 /* newpost.swift */; };
 		95C6A66D33B71FEFBBD7DEA3 /* Pods_NewBudget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC99BB91E718BB6C205BE5F5 /* Pods_NewBudget.framework */; };
 		B4E61719D94052978F00FA53 /* Pods_NewBudgetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF23C57E4859D61917B73DCC /* Pods_NewBudgetUITests.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		3A54AC7E21B4B8E9005A04E1 /* NetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
 		3A54AC8021B4D283005A04E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3A54AC8221B4D512005A04E1 /* ThirdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdController.swift; sourceTree = "<group>"; };
+		3A54AC8421B4FB43005A04E1 /* newpost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newpost.swift; sourceTree = "<group>"; };
 		82EF3CAE46C3F7956554E454 /* Pods-NewBudgetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewBudgetUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewBudgetUITests/Pods-NewBudgetUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A821FA390C78D6A8A3BE667 /* Pods-NewBudgetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewBudgetTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewBudgetTests/Pods-NewBudgetTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B494239E85B5BABA2723F498 /* Pods_NewBudgetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewBudgetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				3A54AC7621B4AF85005A04E1 /* Catagories.swift */,
 				3A54AC3E21B4AD5D005A04E1 /* SecondViewController.swift */,
 				3A54AC8021B4D283005A04E1 /* User.swift */,
+				3A54AC8421B4FB43005A04E1 /* newpost.swift */,
 				3A54AC4021B4AD5D005A04E1 /* Main.storyboard */,
 				3A54AC4321B4AD5E005A04E1 /* Assets.xcassets */,
 				3A54AC4521B4AD5E005A04E1 /* LaunchScreen.storyboard */,
@@ -475,6 +478,7 @@
 				3A54AC6C21B4AE93005A04E1 /* CataCollectionViewLayout.swift in Sources */,
 				3A54AC7B21B4B27C005A04E1 /* Catagorydetail.swift in Sources */,
 				3A54AC6F21B4AEDE005A04E1 /* Spending.swift in Sources */,
+				3A54AC8521B4FB43005A04E1 /* newpost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

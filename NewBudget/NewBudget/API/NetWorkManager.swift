@@ -14,6 +14,7 @@ class NetworkManager {
     
      static var userid: Int!
     
+    
     /// Endpoint URL string
     /// NOTE: Remember to set "Allows arbitrary loads" to YES in your Info.plist in order
     /// to access API websites that are not HTTPS (not "secure" - you'll need this for your project)
@@ -43,23 +44,36 @@ class NetworkManager {
         }
     }
     
-    static func post(username: String, budget: Int, completion: @escaping (User) -> Void) {
-        let parameters: [String:Any] = [
-            "username": username,
-            "total":budget
+    static func postcata(catagory: String, amount: Int) {
+        let parameters2: [String:Any] = [
+            "username": catagory,
+            "total":amount
         ]
-        Alamofire.request(endpoint+"budget/", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: [:]).validate().responseData { (response) in
+        
+        let parameters1: [String:Any] = [
+            "name": catagory,
+        ]
+        
+        var id: String
+        id = String (NetworkManager.userid)
+        
+        Alamofire.request(endpoint+"budget/"+id+"/category/", method: .post, parameters: parameters1, encoding: JSONEncoding.default, headers: [:]).validate().responseData { (response) in
             switch response.result {
             case .success(let data):
                 if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
                     print(json)
                 }
-                let jsonDecoder = JSONDecoder()
-                if let user = try? jsonDecoder.decode(UserDataResponse.self, from: data) {
-                    self.userid = user.data.id
-                    completion(user.data)
-                } else {
-                    print("Invalid Response Data")
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+      
+        Alamofire.request(endpoint+"budget/"+id+"/string:category_name/", method: .post, parameters: parameters2, encoding: JSONEncoding.default, headers: [:]).validate().responseData { (response) in
+            switch response.result {
+            case .success(let data):
+                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+                    print(json)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
