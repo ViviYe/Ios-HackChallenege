@@ -86,7 +86,34 @@ class NetworkManager {
     
     
     
-    static func category(catagory: String, amount: Int) {
+    static func getspending(cata: String,completion: @escaping ([Spending]) -> Void) {
+        
+        var id: String
+        id =  UserDefaults.standard.string(forKey: "user") ?? "1"
+
+        Alamofire.request(endpoint+"budget/"+id+"/"+cata+"/", method: .get).validate().responseData { (response) in
+            switch response.result {
+            case .success(let data):
+                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+                    print(json)
+                }
+                let jsonDecoder = JSONDecoder()
+                if let spent = try? jsonDecoder.decode(spendingResponse.self, from: data) {
+                    completion(spent.data.spend)
+                } else {
+                    print("Invalid Response Data")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    static func getspending(catagory: String) {
         
         
         let parameters1: [String:Any] = [
@@ -108,10 +135,9 @@ class NetworkManager {
             }
         }
         
-       
+        
         
     }
-    
     
     
     

@@ -77,7 +77,9 @@ class SecondViewController: UIViewController, UICollectionViewDelegate, UICollec
         //
         //        UserDefaults.standard.string(forKey: "username")
         
+        let catagory = catagories[indexPath.item]
         let navViewController = catagorydetail()
+        navViewController.cusinit(name: catagory.name)
         navViewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(navViewController, animated: true)
         

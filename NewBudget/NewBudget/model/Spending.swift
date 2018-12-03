@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class Spending: NSObject {
+struct Spending: Codable {
     let name: String
     var amount: Int
     
@@ -18,9 +18,15 @@ class Spending: NSObject {
         self.amount = amount
     
     }
-    init(json: JSON) {
-        self.name = json["name"].stringValue
-        self.amount = json["amount"].intValue
-        
-    }
 }
+
+ 
+struct spendingResponse: Codable {
+    var data: spendingDataResponse
+}
+
+struct spendingDataResponse: Codable {
+    var spend: [Spending]
+}
+
+

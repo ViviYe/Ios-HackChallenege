@@ -13,9 +13,16 @@ class catagorydetail: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var tableView: UITableView!
     var spending: [Spending]!
+    var cata: String!
+    
     
     let reuseIdentifier = "CellReuse"
     let cellHeight: CGFloat = 80
+    
+    
+    func cusinit(name: String){
+        self.cata = name
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
