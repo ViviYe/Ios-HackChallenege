@@ -124,7 +124,7 @@ class FirstViewController: UIViewController {
         if let unwrapt1 = opttext1{
             if let unwrapt2 = opttext2{
                 if (unwrapt2 != "" && unwrapt1 != ""){
-                    TextView.text.append("\n" + " Item: \(unwrapt1)     Quantity: \(unwrapt2)")
+                    NetworkManager.postcata(catagory: unwrapt1, amount: Int(unwrapt2)!)
                 }
             }
         }
